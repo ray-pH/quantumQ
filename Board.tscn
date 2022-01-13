@@ -1,0 +1,349 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://gatePalette.gd" type="Script" id=1]
+[ext_resource path="res://font/Ubuntu-B.tres" type="DynamicFont" id=2]
+[ext_resource path="res://sprites/gateSelected.png" type="Texture" id=3]
+[ext_resource path="res://font/UbuntuMono-R.tres" type="DynamicFont" id=4]
+[ext_resource path="res://board.gd" type="Script" id=5]
+[ext_resource path="res://font/button.theme" type="Theme" id=6]
+[ext_resource path="res://font/Ubuntu-R.tres" type="DynamicFont" id=7]
+[ext_resource path="res://font/Latin-Modern-Math.tres" type="DynamicFont" id=8]
+[ext_resource path="res://font/Ubuntu-R-small.tres" type="DynamicFont" id=9]
+[ext_resource path="res://initialDialog.gd" type="Script" id=10]
+[ext_resource path="res://dimmer.gd" type="Script" id=11]
+[ext_resource path="res://font/Latin-Modern-Math-Offset.tres" type="DynamicFont" id=12]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.00392157, 0.529412, 0.52549, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.207843, 0.207843, 0.227451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.207843, 0.207843, 0.227451, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[node name="Board" type="Node2D"]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 128.004, 334.0 ]
+}
+
+[node name="gatePalette" type="GridContainer" parent="."]
+margin_left = 108.0
+margin_top = 30.0
+margin_right = 783.0
+margin_bottom = 94.0
+columns = 12
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controlLineBoard" type="GridContainer" parent="."]
+margin_left = 108.0
+margin_top = 153.6
+margin_right = 722.0
+margin_bottom = 307.6
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="gateBoard" type="GridContainer" parent="."]
+margin_left = 108.0
+margin_top = 128.0
+margin_right = 722.0
+margin_bottom = 334.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectedGateTexture" type="TextureRect" parent="."]
+margin_left = -86.8364
+margin_top = 11.3265
+margin_right = 41.1636
+margin_bottom = 139.326
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QIn" type="GridContainer" parent="."]
+margin_left = 32.0
+margin_top = 128.0
+margin_right = 96.0
+margin_bottom = 334.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EvalButton" type="Button" parent="."]
+margin_left = 824.0
+margin_top = 30.0
+margin_right = 966.0
+margin_bottom = 70.0
+theme = ExtResource( 6 )
+custom_fonts/font = ExtResource( 2 )
+text = "Evaluate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 30.0
+margin_right = 72.0
+margin_bottom = 70.0
+theme = ExtResource( 6 )
+text = "<"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpButton" type="Button" parent="."]
+margin_left = 200.0
+margin_top = 359.0
+margin_right = 232.0
+margin_bottom = 391.0
+theme = ExtResource( 6 )
+text = "?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Task" type="Control" parent="."]
+margin_left = 32.0
+margin_top = 360.0
+margin_right = 72.0
+margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskLabelPanel" type="Panel" parent="Task"]
+margin_right = 152.0
+margin_bottom = 32.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Task/TaskLabelPanel"]
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 153.0
+margin_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color( 0.145098, 0.145098, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskLabel" type="Label" parent="Task/TaskLabelPanel"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 53.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 2 )
+text = "Task"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskPanel" type="Panel" parent="Task"]
+margin_top = 40.0
+margin_right = 476.0
+margin_bottom = 220.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TaskText" type="RichTextLabel" parent="Task/TaskPanel"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 468.0
+margin_bottom = 172.0
+custom_fonts/italics_font = ExtResource( 8 )
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Result" type="Control" parent="."]
+margin_left = 560.0
+margin_top = 360.0
+margin_right = 600.0
+margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultButton" type="Button" parent="Result"]
+margin_left = 170.0
+margin_right = 270.0
+margin_bottom = 32.0
+theme = ExtResource( 6 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color_pressed = Color( 0.709804, 0.709804, 0.709804, 1 )
+toggle_mode = true
+pressed = true
+text = "Show all"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultLabelPanel" type="Panel" parent="Result"]
+margin_right = 152.0
+margin_bottom = 32.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="Result/ResultLabelPanel"]
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 153.0
+margin_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color( 0.145098, 0.145098, 0.164706, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResultLabel" type="Label" parent="Result/ResultLabelPanel"]
+margin_left = 8.0
+margin_top = 4.0
+margin_right = 53.0
+margin_bottom = 27.0
+custom_fonts/font = ExtResource( 2 )
+text = "Result"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="resultText" type="RichTextLabel" parent="Result"]
+margin_top = 40.0
+margin_right = 445.0
+margin_bottom = 220.0
+custom_fonts/italics_font = ExtResource( 8 )
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+bbcode_text = "[ Not yet calculated ]"
+text = "[ Not yet calculated ]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dimmer" type="ColorRect" parent="."]
+visible = false
+margin_left = -500.0
+margin_top = -500.0
+margin_right = 1524.0
+margin_bottom = 1100.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.45098 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InitialDialog" type="WindowDialog" parent="CanvasLayer"]
+margin_right = 724.0
+margin_bottom = 498.0
+rect_min_size = Vector2( 724, 498 )
+custom_fonts/title_font = ExtResource( 9 )
+window_title = "Help"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/InitialDialog"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 488.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 676, 450 )
+custom_fonts/mono_font = ExtResource( 4 )
+custom_fonts/bold_italics_font = ExtResource( 12 )
+custom_fonts/italics_font = ExtResource( 8 )
+custom_fonts/bold_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="returnDialog" type="ConfirmationDialog" parent="CanvasLayer"]
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+theme = ExtResource( 6 )
+window_title = "---"
+dialog_text = "            Return to Menu?"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuccessDialog" type="WindowDialog" parent="CanvasLayer"]
+margin_right = 385.0
+margin_bottom = 165.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuccessLabel" type="Label" parent="CanvasLayer/SuccessDialog"]
+margin_left = 154.018
+margin_top = 24.0
+margin_right = 223.018
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 2 )
+text = "Success"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextButton" type="Button" parent="CanvasLayer/SuccessDialog"]
+margin_left = 200.0
+margin_top = 94.0
+margin_right = 337.0
+margin_bottom = 140.0
+theme = ExtResource( 6 )
+text = "Next Level"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/SuccessDialog"]
+margin_left = 40.0
+margin_top = 94.0
+margin_right = 177.0
+margin_bottom = 140.0
+theme = ExtResource( 6 )
+text = "Close"

@@ -1,0 +1,252 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://levelGrid.gd" type="Script" id=1]
+[ext_resource path="res://sprites/QuantumQsmall.png" type="Texture" id=2]
+[ext_resource path="res://font/Ubuntu-B.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://font/bigFont/button.theme" type="Theme" id=4]
+[ext_resource path="res://mainMenu.gd" type="Script" id=5]
+[ext_resource path="res://initialDialog.gd" type="Script" id=6]
+[ext_resource path="res://font/bigFont/Ubuntu-R.tres" type="DynamicFont" id=7]
+[ext_resource path="res://font/bigFont/Hack-Regular.tres" type="DynamicFont" id=8]
+[ext_resource path="res://font/bigFont/Latin-Modern-Math.tres" type="DynamicFont" id=9]
+[ext_resource path="res://font/bigFont/UbuntuMono-R.tres" type="DynamicFont" id=10]
+[ext_resource path="res://font/bigFont/Ubuntu-B.tres" type="DynamicFont" id=11]
+[ext_resource path="res://font/Ubuntu-R.tres" type="DynamicFont" id=12]
+[ext_resource path="res://font/Ubuntu-B.tres" type="DynamicFont" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 28
+font_data = ExtResource( 3 )
+
+[node name="LevelNode" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ 515.0 ]
+}
+
+[node name="LevelContainer" type="ScrollContainer" parent="."]
+margin_left = 515.0
+margin_top = 64.0
+margin_right = 985.0
+margin_bottom = 539.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelContainer"]
+margin_right = 470.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelGrid" type="GridContainer" parent="LevelContainer/VBoxContainer"]
+margin_right = 470.0
+rect_min_size = Vector2( 470, 0 )
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 6
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GatesDialog" type="WindowDialog" parent="CanvasLayer"]
+margin_right = 640.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 640, 500 )
+script = ExtResource( 6 )
+
+[node name="GatesLabel" type="RichTextLabel" parent="CanvasLayer/GatesDialog"]
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 616.0
+margin_bottom = 476.0
+rect_min_size = Vector2( 592, 452 )
+theme = ExtResource( 4 )
+custom_fonts/mono_font = ExtResource( 10 )
+custom_fonts/bold_italics_font = ExtResource( 8 )
+custom_fonts/italics_font = ExtResource( 9 )
+custom_fonts/bold_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 7 )
+bbcode_enabled = true
+
+[node name="OptionDialog" type="WindowDialog" parent="CanvasLayer"]
+margin_left = 400.0
+margin_top = 120.0
+margin_right = 900.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 500, 0 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionLabel" type="Label" parent="CanvasLayer/OptionDialog"]
+margin_top = 24.0
+margin_right = 500.0
+margin_bottom = 52.0
+custom_fonts/font = ExtResource( 11 )
+text = "Options"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionLabel2" type="Label" parent="CanvasLayer/OptionDialog"]
+visible = false
+margin_top = 79.4374
+margin_right = 500.0
+margin_bottom = 107.437
+custom_fonts/font = ExtResource( 11 )
+text = "(#Debug Mode Only)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnlockButton" type="Button" parent="CanvasLayer/OptionDialog"]
+visible = false
+margin_left = 125.0
+margin_top = 113.866
+margin_right = 381.0
+margin_bottom = 162.866
+theme = ExtResource( 4 )
+text = "Unlock All Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResetButton" type="Button" parent="CanvasLayer/OptionDialog"]
+visible = false
+margin_left = 78.0
+margin_top = 189.0
+margin_right = 405.0
+margin_bottom = 238.0
+theme = ExtResource( 4 )
+text = "Reset Progress"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Xbutton" type="CheckButton" parent="CanvasLayer/OptionDialog"]
+margin_left = 80.0
+margin_top = 100.0
+margin_right = 400.0
+margin_bottom = 151.0
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 13 )
+text = "  Use ⊕ Symbol"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AboutDialog" type="WindowDialog" parent="CanvasLayer"]
+margin_left = 400.0
+margin_top = 120.0
+margin_right = 900.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 500, 190 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AboutLabel" type="RichTextLabel" parent="CanvasLayer/AboutDialog"]
+margin_left = 24.0
+margin_top = 30.0
+margin_right = 476.0
+margin_bottom = 142.0
+custom_fonts/mono_font = ExtResource( 10 )
+custom_fonts/italics_font = ExtResource( 9 )
+custom_fonts/bold_font = ExtResource( 11 )
+custom_fonts/normal_font = ExtResource( 12 )
+bbcode_enabled = true
+bbcode_text = "[center][b]QuantumQ : Circuit Puzzle[/b]
+
+[table=3]
+[cell]Version[/cell]
+[cell] : [/cell]
+[cell]1.0                                   [/cell]
+[cell]Author[/cell]
+[cell] : [/cell]
+[cell]Rayhan Alghiffari Azizi[/cell][/table][/center]"
+text = "QuantumQ : Circuit Puzzle
+
+Version : 1.0                                   Author : Rayhan Alghiffari Azizi"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="CanvasLayer/AboutDialog"]
+visible = false
+margin_left = 78.2728
+margin_top = 189.0
+margin_right = 422.273
+margin_bottom = 238.0
+theme = ExtResource( 4 )
+text = "Rate On Google Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="Control" parent="."]
+margin_right = 32.0
+margin_bottom = 40.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu"]
+margin_left = 80.0
+margin_top = -16.0
+margin_right = 380.0
+margin_bottom = 284.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu"]
+margin_left = 162.0
+margin_top = 220.0
+margin_right = 305.0
+margin_bottom = 253.0
+custom_fonts/font = SubResource( 1 )
+text = "QuantumQ"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GateButton" type="Button" parent="Menu"]
+margin_left = 114.0
+margin_top = 290.0
+margin_right = 354.0
+margin_bottom = 348.0
+theme = ExtResource( 4 )
+text = "Gates"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="Button" parent="Menu"]
+margin_left = 114.0
+margin_top = 366.0
+margin_right = 354.0
+margin_bottom = 424.0
+theme = ExtResource( 4 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AboutButton" type="Button" parent="Menu"]
+margin_left = 114.0
+margin_top = 442.0
+margin_right = 354.0
+margin_bottom = 500.0
+theme = ExtResource( 4 )
+text = "About"
+__meta__ = {
+"_edit_use_anchors_": false
+}
