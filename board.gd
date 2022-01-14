@@ -227,7 +227,7 @@ func scale_ui():
 		(self.nQubit-1)*128
 	)
 	# dy
-	if self.nQubit < 4 :
+	if self.nQubit < 4 and GlobalVar.onMobile :
 		var dy = 50
 		$Result.rect_position += Vector2(0,-64)
 		$Result/resultText.rect_size += Vector2(0,dy)
@@ -289,3 +289,7 @@ func _ready():
 		"visibility_changed",$Dimmer,"check_visible", [$CanvasLayer/returnDialog])
 	var _d3 = $CanvasLayer/SuccessDialog.connect(
 		"visibility_changed",$Dimmer,"check_visible", [$CanvasLayer/SuccessDialog])
+
+func _input(_event):
+	if Input.is_action_pressed("ui_accept"):
+		evaluate_circuit()

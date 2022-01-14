@@ -6,7 +6,9 @@ const saveFilePath  = "user://savegame.save"
 
 var selectedLevel = null
 var levelGridScroll : int = 0
-var onMobile : bool = true
+
+# manually change this before export
+var onMobile : bool = false
 
 # Options
 var useNotSymbol : bool = false

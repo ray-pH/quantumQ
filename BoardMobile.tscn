@@ -325,19 +325,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="retDialog2" type="ConfirmationDialog" parent="CanvasLayer"]
-margin_right = 450.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 450, 200 )
-theme = ExtResource( 13 )
-window_title = "---"
-dialog_text = "       
-	                   Return to Menu?"
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="SuccessDialog" type="WindowDialog" parent="CanvasLayer"]
 margin_right = 450.0
 margin_bottom = 200.0

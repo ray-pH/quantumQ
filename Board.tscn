@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://gatePalette.gd" type="Script" id=1]
 [ext_resource path="res://font/Ubuntu-B.tres" type="DynamicFont" id=2]
@@ -12,6 +12,12 @@
 [ext_resource path="res://initialDialog.gd" type="Script" id=10]
 [ext_resource path="res://dimmer.gd" type="Script" id=11]
 [ext_resource path="res://font/Latin-Modern-Math-Offset.tres" type="DynamicFont" id=12]
+[ext_resource path="res://sprites/gateEmpty.png" type="Texture" id=13]
+[ext_resource path="res://font/bigFont/button.theme" type="Theme" id=14]
+[ext_resource path="res://font/bigFont/Ubuntu-B.tres" type="DynamicFont" id=15]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.207843, 0.207843, 0.227451, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.00392157, 0.529412, 0.52549, 1 )
@@ -36,6 +42,15 @@ corner_radius_bottom_left = 8
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 128.004, 334.0 ]
+}
+
+[node name="paletteBack" type="Panel" parent="."]
+margin_top = 18.0
+margin_right = 1028.0
+margin_bottom = 90.0
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="gatePalette" type="GridContainer" parent="."]
@@ -69,6 +84,20 @@ margin_bottom = 334.0
 custom_constants/vseparation = 0
 custom_constants/hseparation = 0
 columns = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ghostLine" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0.376471 )
+margin_left = 719.0
+margin_top = 128.0
+margin_right = 1491.0
+margin_bottom = 256.0
+rect_min_size = Vector2( 64, 64 )
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 13 )
+stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -118,22 +147,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HelpButton" type="Button" parent="."]
-margin_left = 200.0
-margin_top = 359.0
-margin_right = 232.0
-margin_bottom = 391.0
-theme = ExtResource( 6 )
-text = "?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Task" type="Control" parent="."]
 margin_left = 32.0
 margin_top = 360.0
 margin_right = 72.0
 margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HelpButton" type="Button" parent="Task"]
+margin_left = 168.0
+margin_top = -1.0
+margin_right = 200.0
+margin_bottom = 31.0
+theme = ExtResource( 6 )
+text = "?"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -204,10 +233,10 @@ margin_left = 170.0
 margin_right = 270.0
 margin_bottom = 32.0
 theme = ExtResource( 6 )
+custom_colors/font_color_pressed = Color( 0.709804, 0.709804, 0.709804, 1 )
+custom_fonts/font = ExtResource( 9 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
-custom_fonts/font = ExtResource( 9 )
-custom_colors/font_color_pressed = Color( 0.709804, 0.709804, 0.709804, 1 )
 toggle_mode = true
 pressed = true
 text = "Show all"
@@ -301,18 +330,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="returnDialog" type="ConfirmationDialog" parent="CanvasLayer"]
-margin_right = 300.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 300, 100 )
-theme = ExtResource( 6 )
-window_title = "---"
-dialog_text = "            Return to Menu?"
-script = ExtResource( 10 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="SuccessDialog" type="WindowDialog" parent="CanvasLayer"]
 margin_right = 385.0
 margin_bottom = 165.0
@@ -347,3 +364,41 @@ margin_right = 177.0
 margin_bottom = 140.0
 theme = ExtResource( 6 )
 text = "Close"
+
+[node name="returnDialog" type="WindowDialog" parent="CanvasLayer"]
+margin_right = 450.0
+margin_bottom = 200.0
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnAskLabel" type="Label" parent="CanvasLayer/returnDialog"]
+margin_left = 120.0
+margin_top = 24.0
+margin_right = 312.0
+margin_bottom = 83.0
+custom_fonts/font = ExtResource( 15 )
+text = "Return to Menu?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OkButton" type="Button" parent="CanvasLayer/returnDialog"]
+margin_left = 230.0
+margin_top = 94.0
+margin_right = 390.0
+margin_bottom = 158.0
+theme = ExtResource( 14 )
+text = "OK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CancelButton" type="Button" parent="CanvasLayer/returnDialog"]
+margin_left = 40.0
+margin_top = 94.0
+margin_right = 200.0
+margin_bottom = 158.0
+theme = ExtResource( 14 )
+text = "Cancel"
