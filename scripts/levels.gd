@@ -1,6 +1,6 @@
 extends Node
 
-const GateType = preload("res://gateEnum.gd").Typ
+const GateType = preload("res://scripts/gateEnum.gd").Typ
 
 # TODO: create sections i.e. classical, superposition, multibits
 const section = {

@@ -1,22 +1,22 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://levelGrid.gd" type="Script" id=1]
-[ext_resource path="res://sprites/QuantumQsmall.png" type="Texture" id=2]
-[ext_resource path="res://font/Ubuntu-B.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://font/bigFont/button.theme" type="Theme" id=4]
-[ext_resource path="res://mainMenu.gd" type="Script" id=5]
-[ext_resource path="res://initialDialog.gd" type="Script" id=6]
-[ext_resource path="res://font/bigFont/Ubuntu-R.tres" type="DynamicFont" id=7]
-[ext_resource path="res://font/bigFont/Hack-Regular.tres" type="DynamicFont" id=8]
-[ext_resource path="res://font/bigFont/Latin-Modern-Math.tres" type="DynamicFont" id=9]
-[ext_resource path="res://font/bigFont/UbuntuMono-R.tres" type="DynamicFont" id=10]
-[ext_resource path="res://font/bigFont/Ubuntu-B.tres" type="DynamicFont" id=11]
-[ext_resource path="res://font/Ubuntu-R.tres" type="DynamicFont" id=12]
-[ext_resource path="res://font/Ubuntu-B.tres" type="DynamicFont" id=13]
+[ext_resource path="res://scripts/levelGrid.gd" type="Script" id=1]
+[ext_resource path="res://font/bigFont/UbuntuMono-R.tres" type="DynamicFont" id=2]
+[ext_resource path="res://font/bigFont/Ubuntu-R.tres" type="DynamicFont" id=3]
+[ext_resource path="res://font/bigFont/Latin-Modern-Math.tres" type="DynamicFont" id=4]
+[ext_resource path="res://font/Ubuntu-B.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://sprites/QuantumQsmall.png" type="Texture" id=6]
+[ext_resource path="res://scripts/initialDialog.gd" type="Script" id=7]
+[ext_resource path="res://font/Ubuntu-B.tres" type="DynamicFont" id=8]
+[ext_resource path="res://font/bigFont/button.theme" type="Theme" id=9]
+[ext_resource path="res://scripts/mainMenu.gd" type="Script" id=10]
+[ext_resource path="res://font/Ubuntu-R.tres" type="DynamicFont" id=11]
+[ext_resource path="res://font/bigFont/Ubuntu-B.tres" type="DynamicFont" id=12]
+[ext_resource path="res://font/bigFont/Hack-Regular.tres" type="DynamicFont" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
-font_data = ExtResource( 3 )
+font_data = ExtResource( 5 )
 
 [node name="LevelNode" type="Node2D"]
 __meta__ = {
@@ -53,7 +53,7 @@ script = ExtResource( 1 )
 margin_right = 640.0
 margin_bottom = 500.0
 rect_min_size = Vector2( 640, 500 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="GatesLabel" type="RichTextLabel" parent="CanvasLayer/GatesDialog"]
 margin_left = 24.0
@@ -61,12 +61,12 @@ margin_top = 24.0
 margin_right = 616.0
 margin_bottom = 476.0
 rect_min_size = Vector2( 592, 452 )
-theme = ExtResource( 4 )
-custom_fonts/mono_font = ExtResource( 10 )
-custom_fonts/bold_italics_font = ExtResource( 8 )
-custom_fonts/italics_font = ExtResource( 9 )
-custom_fonts/bold_font = ExtResource( 11 )
-custom_fonts/normal_font = ExtResource( 7 )
+theme = ExtResource( 9 )
+custom_fonts/mono_font = ExtResource( 2 )
+custom_fonts/bold_italics_font = ExtResource( 13 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 12 )
+custom_fonts/normal_font = ExtResource( 3 )
 bbcode_enabled = true
 
 [node name="OptionDialog" type="WindowDialog" parent="CanvasLayer"]
@@ -75,7 +75,7 @@ margin_top = 120.0
 margin_right = 900.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 500, 0 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -84,7 +84,7 @@ __meta__ = {
 margin_top = 24.0
 margin_right = 500.0
 margin_bottom = 52.0
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 12 )
 text = "Options"
 align = 1
 __meta__ = {
@@ -96,7 +96,7 @@ visible = false
 margin_top = 79.4374
 margin_right = 500.0
 margin_bottom = 107.437
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 12 )
 text = "(#Debug Mode Only)"
 align = 1
 __meta__ = {
@@ -109,7 +109,7 @@ margin_left = 125.0
 margin_top = 113.866
 margin_right = 381.0
 margin_bottom = 162.866
-theme = ExtResource( 4 )
+theme = ExtResource( 9 )
 text = "Unlock All Level"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -121,7 +121,7 @@ margin_left = 78.0
 margin_top = 189.0
 margin_right = 405.0
 margin_bottom = 238.0
-theme = ExtResource( 4 )
+theme = ExtResource( 9 )
 text = "Reset Progress"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -132,8 +132,8 @@ margin_left = 80.0
 margin_top = 100.0
 margin_right = 400.0
 margin_bottom = 151.0
-theme = ExtResource( 4 )
-custom_fonts/font = ExtResource( 13 )
+theme = ExtResource( 9 )
+custom_fonts/font = ExtResource( 8 )
 text = "  Use ⊕ Symbol"
 align = 1
 __meta__ = {
@@ -146,7 +146,7 @@ margin_top = 120.0
 margin_right = 900.0
 margin_bottom = 310.0
 rect_min_size = Vector2( 500, 190 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -156,10 +156,10 @@ margin_left = 24.0
 margin_top = 30.0
 margin_right = 476.0
 margin_bottom = 142.0
-custom_fonts/mono_font = ExtResource( 10 )
-custom_fonts/italics_font = ExtResource( 9 )
-custom_fonts/bold_font = ExtResource( 11 )
-custom_fonts/normal_font = ExtResource( 12 )
+custom_fonts/mono_font = ExtResource( 2 )
+custom_fonts/italics_font = ExtResource( 4 )
+custom_fonts/bold_font = ExtResource( 12 )
+custom_fonts/normal_font = ExtResource( 11 )
 bbcode_enabled = true
 bbcode_text = "[center][b]QuantumQ : Circuit Puzzle[/b]
 
@@ -183,7 +183,7 @@ margin_left = 78.2728
 margin_top = 189.0
 margin_right = 422.273
 margin_bottom = 238.0
-theme = ExtResource( 4 )
+theme = ExtResource( 9 )
 text = "Rate On Google Play"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -192,7 +192,7 @@ __meta__ = {
 [node name="Menu" type="Control" parent="."]
 margin_right = 32.0
 margin_bottom = 40.0
-script = ExtResource( 5 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -202,7 +202,7 @@ margin_left = 80.0
 margin_top = -16.0
 margin_right = 380.0
 margin_bottom = 284.0
-texture = ExtResource( 2 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -223,7 +223,7 @@ margin_left = 114.0
 margin_top = 290.0
 margin_right = 354.0
 margin_bottom = 348.0
-theme = ExtResource( 4 )
+theme = ExtResource( 9 )
 text = "Gates"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -234,7 +234,7 @@ margin_left = 114.0
 margin_top = 366.0
 margin_right = 354.0
 margin_bottom = 424.0
-theme = ExtResource( 4 )
+theme = ExtResource( 9 )
 text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -245,7 +245,7 @@ margin_left = 114.0
 margin_top = 442.0
 margin_right = 354.0
 margin_bottom = 500.0
-theme = ExtResource( 4 )
+theme = ExtResource( 9 )
 text = "About"
 __meta__ = {
 "_edit_use_anchors_": false

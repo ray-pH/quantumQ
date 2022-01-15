@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://gate.gd" type="Script" id=1]
-[ext_resource path="res://sprites/gateEmpty.png" type="Texture" id=3]
+[ext_resource path="res://scripts/gate.gd" type="Script" id=1]
+[ext_resource path="res://sprites/gateEmpty.png" type="Texture" id=2]
 
 [node name="Gate" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,7 +10,7 @@ script = ExtResource( 1 )
 margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 3 )
+texture_normal = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

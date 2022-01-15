@@ -1,7 +1,7 @@
 extends GridContainer
 
-const levelList = preload("res://levels.gd").levels
-const sections  = preload("res://levels.gd").section
+const levelList = preload("res://scripts/levels.gd").levels
+const sections  = preload("res://scripts/levels.gd").section
 const colnum    = 6
 
 const buttonTheme : Theme = preload("res://font/button.theme")
@@ -11,9 +11,9 @@ func run_level(level):
 	GlobalVar.levelGridScroll = ($"../.." as ScrollContainer).scroll_vertical
 	GlobalVar.selectedLevel = level
 	if GlobalVar.onMobile :
-		var _scene = get_tree().change_scene("res://BoardMobile.tscn")
+		var _scene = get_tree().change_scene("res://scenes/BoardMobile.tscn")
 	else :
-		var _scene = get_tree().change_scene("res://Board.tscn")
+		var _scene = get_tree().change_scene("res://scenes/Board.tscn")
 
 func generate_level_buttons():
 	var styleTrans : StyleBoxFlat = StyleBoxFlat.new()

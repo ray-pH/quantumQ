@@ -1,10 +1,10 @@
 extends Node2D
 
-const GateClass  = preload("res://Gate.tscn")
-const GateType   = preload("res://gateEnum.gd").Typ
-const QCircuit   = preload("res://quantumCircuit.gd")
-const comp       = preload("res://complexNumber.gd")
-const popupTexts = preload("res://popupText.gd").texts
+const GateClass  = preload("res://scenes/Gate.tscn")
+const GateType   = preload("res://scripts/gateEnum.gd").Typ
+const QCircuit   = preload("res://scripts/quantumCircuit.gd")
+const comp       = preload("res://scripts/complexNumber.gd")
+const popupTexts = preload("res://scripts/popupText.gd").texts
 
 var imgScale = 0.4
 var imgSize  = 128 * imgScale
@@ -134,12 +134,12 @@ func setup_popup(texts : Array):
 func go_next_level():
 	GlobalVar.selectedLevel = GlobalVar.levelList[level.id + 1]
 	if GlobalVar.onMobile :
-		var _scene = get_tree().change_scene("res://BoardMobile.tscn")
+		var _scene = get_tree().change_scene("res://scenes/BoardMobile.tscn")
 	else :
-		var _scene = get_tree().change_scene("res://Board.tscn")
+		var _scene = get_tree().change_scene("res://scenes/Board.tscn")
 
 func go_back_to_menu():
-	var _scene = get_tree().change_scene("res://LevelSelect.tscn")
+	var _scene = get_tree().change_scene("res://scenes/LevelSelect.tscn")
 	
 func confirm_return():
 	$CanvasLayer/returnDialog.popup_centered()

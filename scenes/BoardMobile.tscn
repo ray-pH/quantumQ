@@ -1,22 +1,22 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://gatePalette.gd" type="Script" id=1]
-[ext_resource path="res://font/Ubuntu-B.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/gatePalette.gd" type="Script" id=1]
+[ext_resource path="res://sprites/gateEmpty.png" type="Texture" id=2]
 [ext_resource path="res://sprites/gateSelected.png" type="Texture" id=3]
-[ext_resource path="res://font/UbuntuMono-R.tres" type="DynamicFont" id=4]
-[ext_resource path="res://board.gd" type="Script" id=5]
+[ext_resource path="res://font/bigFont/UbuntuMono-R.tres" type="DynamicFont" id=4]
+[ext_resource path="res://scripts/board.gd" type="Script" id=5]
 [ext_resource path="res://font/button.theme" type="Theme" id=6]
-[ext_resource path="res://font/Ubuntu-R.tres" type="DynamicFont" id=7]
-[ext_resource path="res://font/Latin-Modern-Math.tres" type="DynamicFont" id=8]
+[ext_resource path="res://font/bigFont/Ubuntu-R-small.tres" type="DynamicFont" id=7]
 [ext_resource path="res://font/Ubuntu-R-small.tres" type="DynamicFont" id=9]
-[ext_resource path="res://initialDialog.gd" type="Script" id=10]
-[ext_resource path="res://dimmer.gd" type="Script" id=11]
-[ext_resource path="res://font/Latin-Modern-Math-Offset.tres" type="DynamicFont" id=12]
-[ext_resource path="res://sprites/gateEmpty.png" type="Texture" id=13]
-[ext_resource path="res://font/bigFont/button.theme" type="Theme" id=14]
-[ext_resource path="res://font/bigFont/Ubuntu-B.tres" type="DynamicFont" id=15]
+[ext_resource path="res://scripts/initialDialog.gd" type="Script" id=10]
+[ext_resource path="res://scripts/dimmer.gd" type="Script" id=11]
+[ext_resource path="res://font/bigFont/Ubuntu-R.tres" type="DynamicFont" id=12]
+[ext_resource path="res://font/bigFont/button.theme" type="Theme" id=13]
+[ext_resource path="res://font/bigFont/Ubuntu-B.tres" type="DynamicFont" id=14]
+[ext_resource path="res://font/bigFont/Latin-Modern-Math-Offset.tres" type="DynamicFont" id=15]
+[ext_resource path="res://font/bigFont/Latin-Modern-Math.tres" type="DynamicFont" id=16]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.207843, 0.207843, 0.227451, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -25,9 +25,6 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.207843, 0.207843, 0.227451, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.207843, 0.207843, 0.227451, 1 )
@@ -41,22 +38,22 @@ corner_radius_bottom_left = 8
 [node name="Board" type="Node2D"]
 script = ExtResource( 5 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 128.004, 334.0 ]
+"_edit_horizontal_guides_": [ 94.0, 366.0 ]
 }
 
 [node name="paletteBack" type="Panel" parent="."]
-margin_top = 18.0
-margin_right = 1028.0
-margin_bottom = 90.0
-custom_styles/panel = SubResource( 5 )
+margin_top = 24.0
+margin_right = 1068.0
+margin_bottom = 100.0
+custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="gatePalette" type="GridContainer" parent="."]
-margin_left = 108.0
+margin_left = 120.0
 margin_top = 30.0
-margin_right = 783.0
+margin_right = 795.0
 margin_bottom = 94.0
 columns = 12
 script = ExtResource( 1 )
@@ -66,9 +63,9 @@ __meta__ = {
 
 [node name="controlLineBoard" type="GridContainer" parent="."]
 margin_left = 108.0
-margin_top = 153.6
+margin_top = 142.0
 margin_right = 722.0
-margin_bottom = 307.6
+margin_bottom = 296.0
 custom_constants/vseparation = 0
 custom_constants/hseparation = 0
 columns = 12
@@ -78,9 +75,9 @@ __meta__ = {
 
 [node name="gateBoard" type="GridContainer" parent="."]
 margin_left = 108.0
-margin_top = 128.0
-margin_right = 722.0
-margin_bottom = 334.0
+margin_top = 110.0
+margin_right = 876.0
+margin_bottom = 366.0
 custom_constants/vseparation = 0
 custom_constants/hseparation = 0
 columns = 12
@@ -90,13 +87,13 @@ __meta__ = {
 
 [node name="ghostLine" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0.376471 )
-margin_left = 719.0
-margin_top = 128.0
-margin_right = 1491.0
-margin_bottom = 256.0
+margin_left = 876.0
+margin_top = 110.0
+margin_right = 1260.0
+margin_bottom = 238.0
 rect_min_size = Vector2( 64, 64 )
-rect_scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 13 )
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
 stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -115,9 +112,9 @@ __meta__ = {
 
 [node name="QIn" type="GridContainer" parent="."]
 margin_left = 32.0
-margin_top = 128.0
+margin_top = 110.0
 margin_right = 96.0
-margin_bottom = 334.0
+margin_bottom = 316.0
 custom_constants/vseparation = 0
 custom_constants/hseparation = 0
 __meta__ = {
@@ -127,21 +124,20 @@ __meta__ = {
 [node name="EvalButton" type="Button" parent="."]
 margin_left = 824.0
 margin_top = 30.0
-margin_right = 966.0
-margin_bottom = 70.0
-theme = ExtResource( 6 )
-custom_fonts/font = ExtResource( 2 )
+margin_right = 986.0
+margin_bottom = 94.0
+theme = ExtResource( 13 )
 text = "Evaluate"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MenuButton" type="Button" parent="."]
-margin_left = 32.0
+margin_left = 30.0
 margin_top = 30.0
-margin_right = 72.0
-margin_bottom = 70.0
-theme = ExtResource( 6 )
+margin_right = 94.0
+margin_bottom = 94.0
+theme = ExtResource( 13 )
 text = "<"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -149,19 +145,19 @@ __meta__ = {
 
 [node name="Task" type="Control" parent="."]
 margin_left = 32.0
-margin_top = 360.0
+margin_top = 390.0
 margin_right = 72.0
-margin_bottom = 400.0
+margin_bottom = 430.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HelpButton" type="Button" parent="Task"]
 margin_left = 168.0
-margin_top = -1.0
-margin_right = 200.0
-margin_bottom = 31.0
-theme = ExtResource( 6 )
+margin_top = -12.0
+margin_right = 213.0
+margin_bottom = 33.0
+theme = ExtResource( 13 )
 text = "?"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -189,10 +185,9 @@ __meta__ = {
 
 [node name="TaskLabel" type="Label" parent="Task/TaskLabelPanel"]
 margin_left = 8.0
-margin_top = 4.0
-margin_right = 53.0
-margin_bottom = 27.0
-custom_fonts/font = ExtResource( 2 )
+margin_right = 62.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 14 )
 text = "Task"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -201,7 +196,7 @@ __meta__ = {
 [node name="TaskPanel" type="Panel" parent="Task"]
 margin_top = 40.0
 margin_right = 476.0
-margin_bottom = 220.0
+margin_bottom = 200.0
 custom_styles/panel = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -211,30 +206,31 @@ __meta__ = {
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 468.0
-margin_bottom = 172.0
-custom_fonts/italics_font = ExtResource( 8 )
-custom_fonts/bold_font = ExtResource( 2 )
-custom_fonts/normal_font = ExtResource( 7 )
+margin_bottom = 158.0
+custom_fonts/italics_font = ExtResource( 16 )
+custom_fonts/bold_font = ExtResource( 14 )
+custom_fonts/normal_font = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Result" type="Control" parent="."]
 margin_left = 560.0
-margin_top = 360.0
+margin_top = 390.0
 margin_right = 600.0
-margin_bottom = 400.0
+margin_bottom = 430.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ResultButton" type="Button" parent="Result"]
 margin_left = 170.0
+margin_top = -4.0
 margin_right = 270.0
-margin_bottom = 32.0
+margin_bottom = 34.0
 theme = ExtResource( 6 )
 custom_colors/font_color_pressed = Color( 0.709804, 0.709804, 0.709804, 1 )
-custom_fonts/font = ExtResource( 9 )
+custom_fonts/font = ExtResource( 7 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/focus = SubResource( 4 )
 toggle_mode = true
@@ -266,10 +262,9 @@ __meta__ = {
 
 [node name="ResultLabel" type="Label" parent="Result/ResultLabelPanel"]
 margin_left = 8.0
-margin_top = 4.0
-margin_right = 53.0
-margin_bottom = 27.0
-custom_fonts/font = ExtResource( 2 )
+margin_right = 83.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 14 )
 text = "Result"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -278,9 +273,9 @@ __meta__ = {
 [node name="resultText" type="RichTextLabel" parent="Result"]
 margin_top = 40.0
 margin_right = 445.0
-margin_bottom = 220.0
-custom_fonts/italics_font = ExtResource( 8 )
-custom_fonts/normal_font = ExtResource( 7 )
+margin_bottom = 200.0
+custom_fonts/italics_font = ExtResource( 16 )
+custom_fonts/normal_font = ExtResource( 12 )
 bbcode_enabled = true
 bbcode_text = "[ Not yet calculated ]"
 text = "[ Not yet calculated ]"
@@ -304,9 +299,9 @@ __meta__ = {
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="InitialDialog" type="WindowDialog" parent="CanvasLayer"]
-margin_right = 724.0
-margin_bottom = 498.0
-rect_min_size = Vector2( 724, 498 )
+margin_right = 800.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 800, 500 )
 custom_fonts/title_font = ExtResource( 9 )
 window_title = "Help"
 script = ExtResource( 10 )
@@ -319,50 +314,50 @@ margin_left = 24.0
 margin_top = 24.0
 margin_right = 488.0
 margin_bottom = 280.0
-rect_min_size = Vector2( 676, 450 )
+rect_min_size = Vector2( 752, 452 )
 custom_fonts/mono_font = ExtResource( 4 )
-custom_fonts/bold_italics_font = ExtResource( 12 )
-custom_fonts/italics_font = ExtResource( 8 )
-custom_fonts/bold_font = ExtResource( 2 )
-custom_fonts/normal_font = ExtResource( 7 )
+custom_fonts/bold_italics_font = ExtResource( 15 )
+custom_fonts/italics_font = ExtResource( 16 )
+custom_fonts/bold_font = ExtResource( 14 )
+custom_fonts/normal_font = ExtResource( 12 )
 bbcode_enabled = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SuccessDialog" type="WindowDialog" parent="CanvasLayer"]
-margin_right = 385.0
-margin_bottom = 165.0
+margin_right = 450.0
+margin_bottom = 200.0
 script = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SuccessLabel" type="Label" parent="CanvasLayer/SuccessDialog"]
-margin_left = 154.018
+margin_left = 187.0
 margin_top = 24.0
-margin_right = 223.018
+margin_right = 263.0
 margin_bottom = 47.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 14 )
 text = "Success"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NextButton" type="Button" parent="CanvasLayer/SuccessDialog"]
-margin_left = 200.0
+margin_left = 230.0
 margin_top = 94.0
-margin_right = 337.0
-margin_bottom = 140.0
-theme = ExtResource( 6 )
+margin_right = 390.0
+margin_bottom = 158.0
+theme = ExtResource( 13 )
 text = "Next Level"
 
 [node name="CloseButton" type="Button" parent="CanvasLayer/SuccessDialog"]
 margin_left = 40.0
 margin_top = 94.0
-margin_right = 177.0
-margin_bottom = 140.0
-theme = ExtResource( 6 )
+margin_right = 200.0
+margin_bottom = 158.0
+theme = ExtResource( 13 )
 text = "Close"
 
 [node name="returnDialog" type="WindowDialog" parent="CanvasLayer"]
@@ -378,7 +373,7 @@ margin_left = 120.0
 margin_top = 24.0
 margin_right = 312.0
 margin_bottom = 83.0
-custom_fonts/font = ExtResource( 15 )
+custom_fonts/font = ExtResource( 14 )
 text = "Return to Menu?"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -389,7 +384,7 @@ margin_left = 230.0
 margin_top = 94.0
 margin_right = 390.0
 margin_bottom = 158.0
-theme = ExtResource( 14 )
+theme = ExtResource( 13 )
 text = "OK"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -400,5 +395,5 @@ margin_left = 40.0
 margin_top = 94.0
 margin_right = 200.0
 margin_bottom = 158.0
-theme = ExtResource( 14 )
+theme = ExtResource( 13 )
 text = "Cancel"

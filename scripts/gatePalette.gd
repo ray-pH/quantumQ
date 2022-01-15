@@ -1,6 +1,6 @@
 extends GridContainer
 
-const GateType = preload("res://gateEnum.gd").Typ
+const GateType = preload("res://scripts/gateEnum.gd").Typ
 var selectedGate = GateType.Empty
 
 var imgScale = 0.4

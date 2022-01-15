@@ -1,7 +1,7 @@
 extends Node
 
-const GateType = preload("res://gateEnum.gd").Typ
-const comp = preload("res://complexNumber.gd")
+const GateType = preload("res://scripts/gateEnum.gd").Typ
+const comp = preload("res://scripts/complexNumber.gd")
 
 var result = null
 

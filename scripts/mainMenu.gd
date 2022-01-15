@@ -1,6 +1,6 @@
 extends Control
 
-const GateType = preload("res://gateEnum.gd").Typ
+const GateType = preload("res://scripts/gateEnum.gd").Typ
 const gateData = {
 	GateType.H : {
 		name    = "Hadamard",

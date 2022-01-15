@@ -1,6 +1,6 @@
 extends Node
 
-const levelList = preload("res://levels.gd").levels
+const levelList = preload("res://scripts/levels.gd").levels
 const optiFilePath  = "user://optigame.save"
 const saveFilePath  = "user://savegame.save"
 

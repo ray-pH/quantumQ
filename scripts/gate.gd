@@ -1,6 +1,6 @@
 extends Node2D
 
-const GateType = preload("res://gateEnum.gd").Typ
+const GateType = preload("res://scripts/gateEnum.gd").Typ
 var typ = GateType.Empty
 var palette : GridContainer = null
 var board   : Node2D = null
