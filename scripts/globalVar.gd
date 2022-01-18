@@ -8,7 +8,7 @@ var selectedLevel = null
 var levelGridScroll : int = 0
 
 # manually change this before export
-var onMobile : bool = false
+var onMobile : bool = true
 
 # Options
 var useNotSymbol : bool = false

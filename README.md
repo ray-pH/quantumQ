@@ -9,5 +9,7 @@ Created using Godot game engine.
 ## Download
 
 Available for Android, Windows, and Linux
+
 [Google Play](https://play.google.com/store)
+
 [Itch.io](https://ray-ph.itch.io/quantumq)
