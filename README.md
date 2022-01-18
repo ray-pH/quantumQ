@@ -10,6 +10,6 @@ Created using Godot game engine.
 
 Available for Android, Windows, and Linux
 
-[Google Play](https://play.google.com/store)
+[Google Play](https://play.google.com/store/apps/details?id=com.ph.quantumq)
 
 [Itch.io](https://ray-ph.itch.io/quantumq)
